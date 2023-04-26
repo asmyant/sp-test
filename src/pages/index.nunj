@@ -1,7 +1,7 @@
 {% extends "../templates/base.nunj" %}
 {% from "../components/steps/steps.nunj" import steps %}
 
-{% block title %}SP.shop {{ super() }}{% endblock title %}
+{% block title %}SP.shop{% endblock title %}
 
 {% block content %}
 
