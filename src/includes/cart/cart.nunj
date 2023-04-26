@@ -19,14 +19,18 @@
 
    <div class="cart__col">
       <div class="cart__title title">Promo code</div>
-      <div class="cart__promo">
-         {{ input({ placeholder: 'Placeholder Text' }) }}
+      <form action="#" method="post" class="cart__promo">
+         {{ input({
+            name: "promo-code",
+            attr: 'placeholder="Placeholder Text" required=""'
+         }) }}
          {{ button({
+            type: 'submit',
             children: 'Apply',
             theme: 'primary'
          }) }}
       </div>
-   </div>
+   </form>
 
    <div class="cart__col">
       <div class="cart__receipt">

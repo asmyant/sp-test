@@ -3,7 +3,7 @@
 {% from "../../components/radio/radio.nunj" import radio %}
 {% from "../../components/icon/icon.nunj" import icon %}
 
-<div class="billing">
+<form action="#" method="post" class="billing">
    <div class="billing__header billing__row">
       <div class="title billing__row">Billing Information</div>
 
@@ -41,7 +41,7 @@
    </div>
 
    <div class="billing__footer">
-      {{ button({ children: 'Back', theme: 'solid' }) }}
-      {{ button({ children: 'Check Out', theme: 'primary' }) }}
+      {{ button({ children: 'Back', theme: 'solid', type: 'button' }) }}
+      {{ button({ children: 'Check Out', theme: 'primary', type: 'submit' }) }}
    </div>
-</div>
+</form>

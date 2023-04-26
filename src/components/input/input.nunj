@@ -4,5 +4,10 @@
    {% if props.label %}
       {{ label({ title: props.label, for: props.id }) }}
    {% endif %}
-   <input type="text" id="{{ props.id }}" class="form-control{% if props.className %} {{ props.className }}{% endif %}" placeholder="{{ props.placeholder }}">
+   <input
+      type="{% if props.type %}{{ props.type }}{% else %}text{% endif %}"
+      {% if props.id %}id="{{ props.id }}"{% endif %}
+      class="form-control{% if props.className %} {{ props.className }}{% endif %}"
+      {% if props.attr %} {{ props.attr }}{% endif %}
+   >
 {% endmacro %}

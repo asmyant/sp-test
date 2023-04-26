@@ -1,32 +1,51 @@
 {% from "../../components/input/input.nunj" import input %}
 {% from "../../components/label/label.nunj" import label %}
+{% from "../../components/tooltip/tooltip.nunj" import tooltip %}
 
 <div class="card-form">
    <div class="card-form__row">
       <div class="card-form__col">
          {{ input({
-            placeholder: 'Placeholder Text',
             label: 'Name on card',
-            id: 'name'
+            id: 'name',
+            attr: 'required="" placeholder="Placeholder Text" name="name"'
          }) }}
       </div>
 
       <div class="card-form__col">
          {{ label({ title: 'Card number', for: 'first-numbers' }) }}
          <div class="card-form__numbers">
-            <div class="card-form__number">{{ input({ id: 'first-numbers' }) }}</div>
-            <div class="card-form__number">{{ input() }}</div>
-            <div class="card-form__number">{{ input() }}</div>
-            <div class="card-form__number">{{ input() }}</div>
+            <div class="card-form__number">
+               {{ input({ type: 'number', id: 'first-numbers', attr: "required='' name='numbers-first'" }) }}
+            </div>
+            <div class="card-form__number">
+               {{ input({ type: 'number', attr: "required='' name='numbers-second'" }) }}
+            </div>
+            <div class="card-form__number">
+               {{ input({ type: 'number', attr: "required='' name='numbers-third'" }) }}
+            </div>
+            <div class="card-form__number">
+               {{ input({ type: 'number', attr: "required='' name='numbers-fourth'" }) }}
+            </div>
          </div>
       </div>
 
       <div class="card-form__numbers card-form__col">
          <div class="card-form__number">
-            {{ input({ label: 'Expire date', id: 'expire-date' }) }}
+            {{ input({
+               type: 'number',
+               label: 'Expire date',
+               id: 'expire-date',
+               attr: "required='' name='expire-date'"
+            }) }}
          </div>
          <div class="card-form__number">
-            {{ input({ label: 'CVV code', id: 'cvv' }) }}
+            {{ input({
+               id: 'cvv',
+               type: 'number',
+               label: 'CVV code' + tooltip({ className: 'form-label__tooltip', text: 'Notify' }),
+               attr: "required='' name='cvv'"
+            }) }}
          </div>
       </div>
    </div>
