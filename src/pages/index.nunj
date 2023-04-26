@@ -1,0 +1,26 @@
+{% extends "../templates/base.nunj" %}
+{% from "../components/steps/steps.nunj" import steps %}
+
+{% block content %}
+
+   {% include '../includes/header/header.nunj' %}
+
+   <main class="home">
+      <div class="home__wrapper">
+         {{ steps({
+            className: 'home__steps',
+            items: ['Account', 'Shipping', 'Billing', 'Review'],
+            active: 3
+         }) }}
+
+         <div class="home__center">
+            {% include '../includes/billing/billing.nunj' %}
+         </div>
+      </div>
+
+      <aside class="home__aside js-cart">
+         {% include '../includes/cart/cart.nunj' %}
+      </aside>
+   </main>
+
+{% endblock %}

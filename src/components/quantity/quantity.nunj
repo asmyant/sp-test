@@ -1,0 +1,27 @@
+{% from "../icon/icon.nunj" import icon %}
+
+{% macro quantity(props) %}
+   <div class="quantity js-quantity {{ props.className }}">
+      <div class="quantity__controls">
+         <button type="button" disabled class="quantity__button js-quantity__button" data-action="decrement">
+            {{ icon({
+               iconName: 'decrement',
+               attr: 'width="20" height="20"',
+               className: 'quantity__icon'
+            }) }}
+         </button>
+         <input type="text" value="1" readonly class="quantity__input js-quantity__input" />
+         <button type="button" class="quantity__button js-quantity__button" data-action="increment">
+            {{ icon({
+               iconName: 'increment',
+               attr: 'width="20" height="20"',
+               className: 'quantity__icon'
+            }) }}
+         </button>
+      </div>
+
+      <div class="quantity__price">
+         $ <span class="js-quantity__price" data-price="{{ props.price }}">{{ props.price }}</span>
+      </div>
+   </div>
+{% endmacro %}

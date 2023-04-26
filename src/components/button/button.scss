@@ -1,0 +1,45 @@
+.button {
+  @extend .transition-active;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  height: 40px;
+  padding: 0 30px;
+  border-radius: 3px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color $default-transition-duration $default-transition-function,
+    border $default-transition-duration $default-transition-function,
+    box-shadow $default-transition-duration $default-transition-function,
+    color $default-transition-duration $default-transition-function;
+
+  &--theme {
+    &-primary {
+      background-color: $primary;
+      border-color: $primary;
+      color: white;
+
+      &:hover {
+        background-color: darken($primary, 20%);
+        border-color: darken($primary, 20%);
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 3px rgba($primary, 0.25);
+      }
+    }
+
+    &-solid {
+      border: 1px solid $borderGray;
+      background-color: transparent;
+      color: $black;
+
+      &:hover {
+        background-color: $primary;
+        border-color: $primary;
+        color: white;
+      }
+    }
+  }
+}

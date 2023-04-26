@@ -1,0 +1,34 @@
+.form-radio {
+  &__input {
+    display: none;
+
+    &:checked + label:before {
+      background-color: $primary;
+    }
+  }
+
+  &__label {
+    color: $black;
+    font-weight: 400;
+    font-size: 14px;
+    padding-left: 30px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+
+    &:before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border: 5px solid white;
+      background-color: white;
+      position: absolute;
+      left: 0;
+      border-radius: 50%;
+      top: 50%;
+      transition: background-color $default-transition-duration $default-transition-function;
+      margin-top: -9px;
+      box-shadow: 0 0 0 1px $borderGray;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{% from "../../components/icon/icon.nunj" import icon %}
+
+<div class="header">
+   <div class="header__row">
+      <a href="/" class="header__logo">
+         <img src="assets/images/logo.svg" alt="">
+      </a>
+
+      <div class="header__actions">
+
+         <button type="button" class="header__action">
+            {{ icon({
+               iconName: 'search',
+               className: 'header__action-icon',
+               attr: 'width="24" height="24"'
+            }) }}
+         </button>
+
+         <a href="#" class="header__action">
+            {{ icon({
+               iconName: 'basket',
+               className: 'header__action-icon',
+               attr: 'width="24" height="21"'
+            }) }}
+            <span class="header__action-count">2</span>
+         </a>
+
+         <button type="button" class="header__action header__action--burger js-cart__toggle">
+            {{ icon({
+               iconName: 'burger',
+               className: 'header__action-icon',
+               attr: 'width="29" height="22"'
+            }) }}
+         </button>
+
+      </div>
+   </div>
+</div>

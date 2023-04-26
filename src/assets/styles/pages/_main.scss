@@ -1,0 +1,80 @@
+.home {
+  flex-grow: 1;
+  padding-top: 80px;
+
+  @include min-screen('1025px') {
+    display: flex;
+  }
+
+  &__wrapper {
+    flex-grow: 1;
+    padding: 60px 10px;
+
+    @include min-screen('576px') {
+      padding: 60px 90px 70px 90px;
+    }
+
+    @include min-screen('1025px') {
+      padding-right: 490px;
+    }
+  }
+
+  &__center {
+    max-width: 630px;
+    margin: 0 auto;
+  }
+
+  &__steps {
+    margin-bottom: 72px;
+
+    @include max-screen('575px') {
+      margin-right: 20px;
+      margin-left: 20px;
+    }
+  }
+
+  &__aside {
+    border-left: 1px solid $borderGray;
+    position: fixed;
+    right: 0;
+    background-color: white;
+    top: 81px;
+    bottom: 0;
+    overflow-y: scroll;
+    z-index: 90;
+    transition: transform $default-transition-duration $default-transition-function;
+
+    &.active {
+      transform: none;
+    }
+
+    @include max-screen('1024px') {
+      transform: translateX(100%);
+    }
+
+    @include min-screen('575px') {
+      width: 410px;
+    }
+
+    @include max-screen('576px') {
+      width: 100%;
+    }
+
+    @include scrollbar {
+      width: 15px;
+    }
+
+    @include scrollbar-track {
+      border: 5px solid red;
+    }
+
+    @include scrollbar-thumb {
+      background-color: $borderGray;
+      border: 5px solid white;
+    }
+
+    @include scrollbar-track-piece {
+      background-color: white;
+    }
+  }
+}

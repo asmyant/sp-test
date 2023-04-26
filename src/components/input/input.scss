@@ -1,0 +1,20 @@
+.form-control {
+  background: $inputBackground;
+  border-radius: 3px;
+  border: none;
+  height: 40px;
+  padding-left: 10px;
+  width: 100%;
+  transition: background-color $default-transition-duration $default-transition-function,
+    border $default-transition-duration $default-transition-function,
+    box-shadow $default-transition-duration $default-transition-function;
+  outline: none;
+
+  &:focus {
+    box-shadow: 0 0 0 3px rgba($primary, 0.4);
+  }
+
+  &::placeholder {
+    color: $inputPlaceholder;
+  }
+}

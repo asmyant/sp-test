@@ -1,0 +1,8 @@
+{% from "../label/label.nunj" import label %}
+
+{% macro input(props) %}
+   {% if props.label %}
+      {{ label({ title: props.label, for: props.id }) }}
+   {% endif %}
+   <input type="text" id="{{ props.id }}" class="form-control{% if props.className %} {{ props.className }}{% endif %}" placeholder="{{ props.placeholder }}">
+{% endmacro %}

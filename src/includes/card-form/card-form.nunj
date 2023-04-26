@@ -1,0 +1,33 @@
+{% from "../../components/input/input.nunj" import input %}
+{% from "../../components/label/label.nunj" import label %}
+
+<div class="card-form">
+   <div class="card-form__row">
+      <div class="card-form__col">
+         {{ input({
+            placeholder: 'Placeholder Text',
+            label: 'Name on card',
+            id: 'name'
+         }) }}
+      </div>
+
+      <div class="card-form__col">
+         {{ label({ title: 'Card number', for: 'first-numbers' }) }}
+         <div class="card-form__numbers">
+            <div class="card-form__number">{{ input({ id: 'first-numbers' }) }}</div>
+            <div class="card-form__number">{{ input() }}</div>
+            <div class="card-form__number">{{ input() }}</div>
+            <div class="card-form__number">{{ input() }}</div>
+         </div>
+      </div>
+
+      <div class="card-form__numbers card-form__col">
+         <div class="card-form__number">
+            {{ input({ label: 'Expire date', id: 'expire-date' }) }}
+         </div>
+         <div class="card-form__number">
+            {{ input({ label: 'CVV code', id: 'cvv' }) }}
+         </div>
+      </div>
+   </div>
+</div>

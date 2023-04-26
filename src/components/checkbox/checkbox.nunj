@@ -1,0 +1,6 @@
+{% macro checkbox(props) %}
+   <div class="form-checkbox">
+      <input type="checkbox" class="form-checkbox__input" id="{{ props.for }}" {% if props.checked %}checked{% endif %}>
+      <label for="{{ props.for }}" class="form-checkbox__label">{{ props.title }}</label>
+   </div>
+{% endmacro %}

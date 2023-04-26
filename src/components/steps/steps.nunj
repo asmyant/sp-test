@@ -1,0 +1,14 @@
+{% macro steps(props) %}
+   <div class="steps {{ props.className }}">
+      <div class="steps__pagination">
+         {% for step in props.items %}
+            <div class="step {% if loop.index == props.active %}step--active{% endif %}">
+               <div class="step__number">{{ loop.index }}</div>
+               <div class="step__name">{{ step }}</div>
+            </div>
+         {% endfor %}
+      </div>
+
+      <div class="steps__progress" style="width: {{ ((props.active - 1) / (props.items|length - 1)) * 100 }}%"></div>
+   </div>
+{% endmacro %}

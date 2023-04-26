@@ -1,0 +1,43 @@
+.cart {
+  &__col {
+    padding: 40px;
+
+    @include max-screen('575px') {
+      padding: 25px 10px;
+    }
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $borderGray;
+    }
+  }
+
+  &__promo {
+    display: flex;
+    align-items: center;
+
+    & > *:first-child {
+      margin-right: 10px;
+    }
+  }
+
+  &__product {
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__receipt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+
+    &:not(:last-child) {
+      margin-bottom: 13px;
+    }
+  }
+}

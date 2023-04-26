@@ -1,0 +1,70 @@
+.steps {
+  position: relative;
+
+  &__progress {
+    position: absolute;
+    left: 0;
+    background-color: $primary;
+    height: 1px;
+    top: 9px;
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &:before {
+    content: '';
+    left: 0;
+    right: 0;
+    top: 9px;
+    height: 1px;
+    background-color: $borderGray;
+    position: absolute;
+  }
+}
+
+.step {
+  text-align: center;
+  position: relative;
+
+  &__number {
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    background-color: $primary;
+    display: inline-flex;
+    color: white;
+    z-index: 2;
+    font-size: 10px;
+    font-weight: 500;
+    position: relative;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  &--active {
+    .step {
+      &__number {
+        background-color: white;
+        border: 1px solid $primary;
+        color: black;
+      }
+    }
+
+    & ~ .step .step__number {
+      border: 1px solid $borderGray;
+      color: $borderGray;
+      background-color: white;
+    }
+  }
+
+  &__name {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

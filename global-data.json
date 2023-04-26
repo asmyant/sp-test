@@ -1,0 +1,14 @@
+{
+  "cartProducts": [
+    {
+      "image": "1.png",
+      "title": "Amet minim mollit non deserunt ullamco est sit",
+      "price": "525"
+    },
+    {
+      "image": "2.png",
+      "title": "Amet minim mollit non",
+      "price": "525"
+    }
+  ]
+}

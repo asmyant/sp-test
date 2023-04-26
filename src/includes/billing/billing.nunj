@@ -1,0 +1,47 @@
+{% from "../../components/button/button.nunj" import button %}
+{% from "../../components/checkbox/checkbox.nunj" import checkbox %}
+{% from "../../components/radio/radio.nunj" import radio %}
+{% from "../../components/icon/icon.nunj" import icon %}
+
+<div class="billing">
+   <div class="billing__header billing__row">
+      <div class="title billing__row">Billing Information</div>
+
+      <div class="billing__row billing__types">
+         {{ radio({
+            for: 'payment-card',
+            name: 'payment-types',
+            title: 'Pay with Credit Card',
+            checked: true
+         }) }}
+
+         {{ radio({
+            for: 'payment-paypal',
+            name: 'payment-types',
+            title: icon({ iconName: 'paypal', attr: 'width="85" height="23"' })
+         }) }}
+      </div>
+
+      <div class="panel billing__panel">
+         {% include '../card-form/card-form.nunj' %}
+      </div>
+   </div>
+
+   <div class="billing__row billing__checkboxes">
+      {{ checkbox({
+         for: 'save-card-information',
+         title: 'Save information of this credit card',
+         checked: true
+      }) }}
+
+      {{ checkbox({
+         for: 'terms-and-comditions-and-privacy-policies',
+         title: 'I accept the <a href="#">terms and comditions</a> and the <a href="#">Privacy Policies</a>'
+      }) }}
+   </div>
+
+   <div class="billing__footer">
+      {{ button({ children: 'Back', theme: 'solid' }) }}
+      {{ button({ children: 'Check Out', theme: 'primary' }) }}
+   </div>
+</div>

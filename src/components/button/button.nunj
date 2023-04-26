@@ -1,0 +1,9 @@
+{% macro button(props) %}
+
+   <button
+      class="button{% if props.className %} {{ props.className }}{% endif %} {% if props.theme %}button--theme-{{ props.theme }}{% endif %}"
+   >
+      {{ props.children }}
+   </button>
+
+{% endmacro %}

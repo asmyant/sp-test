@@ -1,0 +1,49 @@
+{% from "../../components/product/product.nunj" import product %}
+{% from "../../components/button/button.nunj" import button %}
+{% from "../../components/input/input.nunj" import input %}
+
+<div class="cart">
+   <div class="cart__col">
+      <div class="cart__title title">My basket</div>
+      <div class="cart__products">
+         {% for item in cartProducts %}
+            {{ product({
+               title: item.title,
+               image: item.image,
+               price: item.price,
+               className: 'cart__product'
+            }) }}
+         {% endfor %}
+      </div>
+   </div>
+
+   <div class="cart__col">
+      <div class="cart__title title">Promo code</div>
+      <div class="cart__promo">
+         {{ input({ placeholder: 'Placeholder Text' }) }}
+         {{ button({
+            children: 'Apply',
+            theme: 'primary'
+         }) }}
+      </div>
+   </div>
+
+   <div class="cart__col">
+      <div class="cart__receipt">
+         <span>Subtotal</span>
+         <span>$1 050</span>
+      </div>
+      <div class="cart__receipt">
+         <span>Tax</span>
+         <span>$100</span>
+      </div>
+      <div class="cart__receipt">
+         <span>Shipping</span>
+         <span>$150</span>
+      </div>
+      <div class="cart__receipt cart__receipt--total">
+         <span class="title">Total</span>
+         <span class="title">$1 300</span>
+      </div>
+   </div>
+</div>

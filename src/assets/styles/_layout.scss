@@ -1,0 +1,12 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1640px;
+  margin: auto;
+}

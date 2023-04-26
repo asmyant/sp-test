@@ -1,0 +1,67 @@
+.header {
+  border-bottom: 1px solid $borderGray;
+  padding: 0 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 90;
+
+  @include max-screen('575px') {
+    padding: 0 10px;
+  }
+
+  &__row {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+  }
+
+  &__action {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+
+    &--burger {
+      @include min-screen('1025px') {
+        display: none;
+      }
+    }
+
+    &-icon {
+      display: block;
+      transition: fill $default-transition-duration $default-transition-function;
+
+      &:hover {
+        fill: $primary;
+      }
+    }
+
+    &-count {
+      background-color: $primary;
+      width: 13px;
+      height: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      border-radius: 50%;
+      top: -5px;
+      right: -5px;
+      font-size: 10px;
+      color: white;
+    }
+
+    &:not(:first-child) {
+      margin-left: 26px;
+    }
+  }
+}

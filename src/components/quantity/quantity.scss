@@ -1,0 +1,41 @@
+.quantity {
+  display: flex;
+  align-items: center;
+
+  &__controls {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    margin-right: 25px;
+  }
+
+  &__input {
+    width: 30px;
+    border: none;
+    text-align: center;
+  }
+
+  &__button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: no-drop;
+    }
+
+    &:hover {
+      &:not([disabled]) {
+        .quantity__icon {
+          fill: $primary;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    display: block;
+    transition: fill $default-transition-duration $default-transition-function;
+  }
+}

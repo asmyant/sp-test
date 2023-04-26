@@ -1,0 +1,8 @@
+.panel {
+  @include min-screen('576px') {
+    border: 1px solid $borderGray;
+    box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    padding: 18px 30px 45px 30px;
+  }
+}

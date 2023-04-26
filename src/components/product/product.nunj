@@ -1,0 +1,25 @@
+{% from "../quantity/quantity.nunj" import quantity %}
+{% from "../icon/icon.nunj" import icon %}
+
+{% macro product(props) %}
+<div class="product js-product {{ props.className }}">
+   <a href="">
+      <img src="assets/images/products/{{ props.image }}" alt="{{ props.title }}" class="product__picture">
+   </a>
+   <div class="product__content">
+      <a href="" class="product__title">{{ props.title }}</a>
+
+      <div class="product__bottom">
+         {{ quantity({ price: '525' }) }}
+      </div>
+   </div>
+
+   <button type="button" class="product__delete js-product__delete">
+      {{ icon({
+         iconName: 'cross',
+         attr: 'width="18" height="18"',
+         className: 'product__delete-icon'
+      }) }}
+   </button>
+</div>
+{% endmacro %}
